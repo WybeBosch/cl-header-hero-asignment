@@ -1,24 +1,40 @@
-// import 'dotenv/config';
 import './style.scss';
-// import './components/header/index.scss';
-// import './components/hero/index.scss';
-// import './style.scss';
-// import insertHero from './components/hero/index.js'
-// import heroHtml from "./components/hero/index.html";
-
-// import heroImage from './static/images/hero-image.jpg'
 
 console.log('javascript index file loaded');
-// console.log({heroImage});
 
-// // console.log('Html from our hero', heroHtml)
 
-// console.log('Main javascript file loaded');
+var heroImage = document.querySelector('.hero-image');
+var header = document.querySelector('header.header-wrapper');
 
-// var myVar = 'Henk';
-// console.log(myVar);
-// window.Henk = myVar;
+function init() {
+	createIntersectionObserver(heroImage);
+}
 
-// console.log('attempting to load hero');
-// insertHero();
+
+//hoisted upwards
+var whenIntersecting = (entries) =>{
+	entries.forEach(entry => {
+		// entry.isIntersecting == true ? this.sticky = false : this.sticky=true;
+		console.log(heroImage);
+		if(entry.isIntersecting == true) {
+			console.log('NOT STICKY ANYMORE');
+			// this.sticky = false;
+			header.classList.remove('sticky');
+		} else if(entry.isIntersecting == false) {
+			console.log('IS NOW STICKY');
+			header.classList.add('sticky');
+			// this.sticky = true;
+		}
+	});
+};
+
+//hoisted upwards
+
+function createIntersectionObserver(thingToObserve) {
+	var headerIntersectObserver = new IntersectionObserver(whenIntersecting, {threshold: 1});
+	headerIntersectObserver.observe(thingToObserve);
+}
+
+
+init();
 
