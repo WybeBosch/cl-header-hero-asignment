@@ -1,0 +1,66 @@
+@import '../../vars.scss';
+
+$imageIndex: 1;
+$blueFilterIndex:2;
+$contentIndex:3;
+
+main.hero-wrapper {
+	border: 1px solid pink;
+	position: relative;
+	margin-top: calc(#{$headerHeight} * -1);
+	padding-top: $headerHeight;
+	z-index: 1;
+
+	.container {
+		&.hero-content {
+			position: relative;
+			z-index: $contentIndex;
+			margin-top: 20%;
+			border: 1px solid red;
+
+			.hero-text {
+				font-size: 10rem;
+				//gocchi hand loaded by main style sheet
+				font-family: 'Gochi Hand', sans-serif;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 78px;
+				line-height: 90px;
+				margin: 50px 0px;
+				max-width: 660px;
+			}
+		}
+	}
+
+	.hero-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid blue;
+
+		&::after {
+			content: "";
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			// background-color: rgba(131, 182, 210, 0.9);
+			background: linear-gradient(0deg, rgba(131, 182, 210, 0.9), rgba(131, 182, 210, 0.9));
+			z-index: $blueFilterIndex;
+			opacity: 1;
+		}
+
+		img {
+			max-width: 100%;
+			display: block;
+			z-index: $imageIndex;
+		}
+	}
+}
