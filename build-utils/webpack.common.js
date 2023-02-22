@@ -15,24 +15,42 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname,'..',  './dist'),
 		filename: 'bundle.js',
-		publicPath: '',
+		// publicPath: '',
 		//this line creates folders in the structure, but they are not used by the actual html
 		// assetModuleFilename: 'src/assets/images/[name].[ext]',
 		clean: true,
+		// publicPath: '/'
 	},
 	devServer: {
 		static: path.resolve(__dirname, '..', './src/index.html'),
 		compress: true,
 		port: 9000,
+		// hot:true,
+		liveReload: true,
+		watchFiles: ['src/*','src/components/*','src/components/**/index.*' ],
 	},
 	module: {
 		rules: [
 
 			//This scss parser work
+			// {
+			// 	test: /\.(scss|css)$/,
+			// 	use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+			// },
 			{
 				test: /\.(scss|css)$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-			},
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							// modules: true,
+							// sourceMap: true,
+							importLoaders: 2
+						}
+					},
+					'sass-loader'
+				]}
 
 			//This is the html loader
 			// {
@@ -78,10 +96,10 @@ module.exports = {
 		new FileIncludeWebpackPlugin({
 			source: './src',
 			replace: [{
-			  regex: /\[\[FILE_VERSION]]/g,
-			  to: 'v=1.0.0',
+				regex: /\[\[FILE_VERSION]]/g,
+				to: 'v=1.0.0',
 			}],
-		  }),
+		}),
 		new MiniCssExtractPlugin(),
 
 		//alternative: https://webpack.js.org/loaders/html-loader/#export-into-html-files
