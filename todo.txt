@@ -14,3 +14,14 @@
 #	- image (dynamic height of fullscreen or no?)
 #	- Text
 	- low prio: paralax
+
+Other done:
+- text colors
+- btn colors
+- hover states (btn / text)
+
+
+Not done yet
+- paralax
+- figma fontsize checkup
+- extra check specific padding sizes
