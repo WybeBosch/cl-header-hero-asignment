@@ -1,5 +1,8 @@
 // import 'dotenv/config';
 import './style.scss';
+// import './components/header/index.scss';
+// import './components/hero/index.scss';
+// import './style.scss';
 // import insertHero from './components/hero/index.js'
 // import heroHtml from "./components/hero/index.html";
 

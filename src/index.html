@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hello Webpack</title>
-		<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-	</head>
-	<body>
-		<div id="app" class="">
-			<!-- <img src="./static/images/hero-image.jpg" alt="" /> -->
-			@@include('./components/header/index.html') @@include('./components/hero/index.html')
-		</div>
-	</body>
+
+<head>
+	<title>Hello Webpack</title>
+	<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+	<link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+	<div id="app" class="">
+		<!-- <img src="./static/images/hero-image.jpg" alt="" /> -->
+		@@include('./components/header/index.html', {
+		"logo" : "./static/images/cloudsuite-logo-rgb.svg",
+		"userImage" : "./static/images/user-icon.svg",
+		"shoppingCartImage" : "./static/images/shopping-cart.svg"
+		})
+
+		@@include('./components/hero/index.html', {
+		"heroImage" : "./static/images/full-hero-image.jpg"
+		})
+	</div>
+</body>
+
 </html>
