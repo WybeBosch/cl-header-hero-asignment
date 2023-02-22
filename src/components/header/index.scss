@@ -2,19 +2,24 @@
 $defaultIconSize: 25px;
 
 header {
-	background-color: transparent;
 	position: fixed;
 	z-index: 2;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	background-color: white;
 
+	//Default behavior
+	background-color: transparent;
 	color: $mainDarkColor;
 	font-weight: bold;
 	// box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+	transition: $smallTransitionTime background-color;
+
+	&.sticky {
+		background-color: white;
+		box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+	}
 
 	.container.header-content {
 		display: flex;
@@ -28,8 +33,14 @@ header {
 
 		//RESET LINK STYLING ONLY FOR HEADER
 		a {
-			color: inherit; /* blue colors for links too */
-			text-decoration: inherit; /* no underline */
+			color: inherit;
+			/* blue colors for links too */
+			text-decoration: inherit;
+			/* no underline */
+
+			&:hover {
+				color: $mainLightColor;
+			}
 		}
 
 		.menu-items {
@@ -43,6 +54,7 @@ header {
 
 			li {
 				display: flex;
+
 				// outline: 1px solid grey;
 				a[href] {
 					padding: 15px 5px;
@@ -71,7 +83,7 @@ header {
 							border-width: 2px 2px 0px 0px;
 							transform: rotate(135deg);
 							transform-origin: center;
-							transition: 0.5s transform;
+							transition: $smallTransitionTime transform;
 							margin-top: -4px;
 							margin-left: -5px;
 							margin-right: 10px;
@@ -193,6 +205,17 @@ header {
 					border-radius: 25px;
 					border: 1px solid grey;
 					padding-left: calc(20px + 20px);
+					background-color: transparent;
+
+					&::placeholder {
+						color: $mainDarkColor;
+					}
+
+					&:focus {
+						border: 1px solid grey;
+						outline: 1px solid grey;
+						background-color: $altDarkColor;
+					}
 				}
 
 				& > img {
@@ -224,13 +247,23 @@ header {
 				display: flex;
 				position: relative;
 
+				@include subtle-scale-hover;
+				transform-origin: top;
+
+				//override because this icon is very small
+				&:hover {
+					transform: scale(1.1);
+				}
+
 				.icon img {
 					width: $defaultIconSize;
 					height: $defaultIconSize;
 				}
 
 				.icon.shopping-cart {
-					//
+					// &:hover {
+					// 	transform:scale(1.)
+					// }
 				}
 
 				.shopping-cart-amount {

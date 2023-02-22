@@ -8,10 +8,18 @@ body {
 	// border: 1px solid red;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	padding-bottom: 900px;
+	padding-bottom: 1900px;
 
 	h1 {
 		color: black;
+	}
+}
+
+a[href] {
+	color: $mainDarkColor;
+
+	&:hover {
+		color: $mainLightColor;
 	}
 }
 
@@ -21,6 +29,26 @@ body {
 	margin-right: auto;
 	// border: 1px solid grey;
 	padding: 0px 15px;
+
+	&.cn-small {
+		max-width: $row_small;
+	}
+
+	&.cn-medium {
+		max-width: $row_medium;
+	}
+
+	&.cn-large {
+		max-width: $row_large;
+	}
+
+	&.cn-extra-large {
+		max-width: $row_extralarge;
+	}
+
+	&.cn-max {
+		max-width: $row_max;
+	}
 }
 
 .btn-primary {
@@ -46,13 +74,15 @@ body {
 	font-size: 22px;
 	line-height: 26px;
 
-	transition: 0.2s transform;
+	// transition: 0.2s transform;
 
-	transform: scale(1);
+	// transform: scale(1);
 
 	&:hover {
 		background-color: $btnPrimaryHover;
 		cursor: pointer;
-		transform: scale(1.02);
+		// transform: scale(1.02);
 	}
+
+	@include subtle-scale-hover;
 }

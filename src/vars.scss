@@ -1,3 +1,7 @@
+$smallTransitionTime: 0.2s;
+$mediumTransitionTime: 0.4s;
+$largeTransitionTime: 0.8;
+
 $headerHeight: 100px;
 
 $break_mobile: 481px;
@@ -15,7 +19,8 @@ $desktop_spacing: 10rem;
 $row_small: 780px;
 $row_medium: 900px;
 $row_large: 1000px;
-$row_max: 1200px;
+$row_extralarge: 1150px;
+$row_max: 1300px;
 
 $btnPrimary: #F6D524;
 // $btnPrimaryHover: darken($btnPrimary, 10%);
@@ -23,6 +28,9 @@ $btnPrimaryHover: #E1C323;
 
 $mainDarkColor: #4B4B4B;
 $mainLightColor: #F6D524;
+
+//questionable naming for this..
+$altDarkColor: #E6E6E6;
 $altLightColor: #FFFFFF;
 
 $warningRed: #E56041;
@@ -55,4 +63,13 @@ $warningRed: #E56041;
 	src:
 		url('./static/fonts/noto-sans-v27-latin-800.woff2') format('woff2'),
 		url('./static/fonts/noto-sans-v27-latin-800.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@mixin subtle-scale-hover {
+	transform: scale(1);
+	transition: $smallTransitionTime transform;
+
+	&:hover {
+		transform: scale(1.02);
+	}
 }
