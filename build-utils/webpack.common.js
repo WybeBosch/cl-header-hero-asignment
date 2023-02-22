@@ -4,9 +4,9 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 //old
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //clean up here later.
-const FileIncludeWebpackPlugin = require('file-include-webpack-plugin')
+const FileIncludeWebpackPlugin = require('file-include-webpack-plugin');
 
 
 module.exports = {
@@ -65,7 +65,7 @@ module.exports = {
 			// 	test: /\.(svg|png|jpg|gif)$/,
 			// 	type: 'asset/resource'
 			// }
-			],
+		],
 	},
 	plugins: [
 		// new HtmlWebpackPlugin({
