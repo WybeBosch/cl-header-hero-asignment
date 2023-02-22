@@ -45,4 +45,14 @@ body {
 	font-weight: 700;
 	font-size: 22px;
 	line-height: 26px;
+
+	transition: 0.2s transform;
+
+	transform: scale(1);
+
+	&:hover {
+		background-color: $btnPrimaryHover;
+		cursor: pointer;
+		transform: scale(1.02);
+	}
 }

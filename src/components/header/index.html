@@ -1,24 +1,46 @@
 <header class="header-wrapper">
 	<div class="container header-content">
 		<ul class="menu-items">
-			<li class="menu-list-item">Products</li>
-			<li class="menu-list-item">Get inspired</li>
-			<li class="menu-list-item">Find a store</li>
-			<li class="menu-list-item">About us</li>
-			<li class="menu-list-item">Contact</li>
+			<li class="menu-list-item has-sub-menu">
+				<a>Products</a>
+				<!-- <ul class="sub-menu-items" style="display:none;"> -->
+				<ul class="sub-menu-items">
+					<li class="sub-menu-list-item"><a href="#living">Living</a></li>
+					<li class="sub-menu-list-item"><a href="#garden">Garden</a></li>
+					<li class="sub-menu-list-item"><a href="#indoor">Indoor Paint</a></li>
+					<li class="sub-menu-list-item"><a href="#outdoor">Outdoor Paint</a></li>
+					<li class="sub-menu-list-item"><a href="#gifts">Gifts</a></li>
+					<li class="sub-menu-list-item"><a href="#products">All Products</a></li>
+				</ul>
+			</li>
+			<li class="menu-list-item">
+				<a href="#inspiration">Get inspired</a>
+			</li>
+			<li class="menu-list-item">
+				<a href="#locator">Find a store</a>
+			</li>
+			<li class="menu-list-item">
+				<a href="#about">About us</a>
+			</li>
+			<li class="menu-list-item">
+				<a href="#contact">Contact</a>
+			</li>
 		</ul>
 		<div class="logo-wrapper">
 			<!-- <img src="../../static/images/cloudsuite-logo-rgb.svg" alt="" /> -->
-			<img src="@@logo" alt="" />
+			<a href="#"><img src="@@logo" alt="" /></a>
 		</div>
 		<div class="user-interactivity">
-			<div class="search">What are you looking for?</div>
+			<div class="search">
+				<img src="@@searchIcon" alt="" />
+				<input type="search" placeholder="What are you looking for?">
+			</div>
 			<div class="account">
 				<div class="icon user-image">
 					<!-- <img src="../../static/images/user-icon.svg" alt="" /> -->
 					<img src="@@userImage" alt="" />
 				</div>
-				<span class="user-text">My profile</span>
+				<span class="user-text">My account</span>
 			</div>
 			<div class="shopping-cart">
 				<div class="icon shopping-cart">

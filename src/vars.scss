@@ -17,7 +17,16 @@ $row_medium: 900px;
 $row_large: 1000px;
 $row_max: 1200px;
 
-/* gochi-hand-regular - latin */
+$btnPrimary: #F6D524;
+// $btnPrimaryHover: darken($btnPrimary, 10%);
+$btnPrimaryHover: #E1C323;
+
+$mainDarkColor: #4B4B4B;
+$mainLightColor: #F6D524;
+$altLightColor: #FFFFFF;
+
+$warningRed: #E56041;
+
 @font-face {
 	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
 	font-family: 'Gochi Hand';

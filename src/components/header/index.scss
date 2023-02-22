@@ -11,75 +11,209 @@ header {
 	right: 0;
 	background-color: white;
 
+	color: $mainDarkColor;
+	font-weight: bold;
+	// box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+
 	.container.header-content {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		// border: 1px solid pink;
+
 		min-height: $headerHeight;
 		z-index: 2;
 		position: relative;
-		background-color: transparent;
-		// padding: 0px 15px;
-	}
 
-	.menu-items {
-		display: flex;
-		// flex-direction: inherit;
-
-		//Cute little owl could be li+li
-		& > * + * {
-			margin-left: 15px;
+		//RESET LINK STYLING ONLY FOR HEADER
+		a {
+			color: inherit; /* blue colors for links too */
+			text-decoration: inherit; /* no underline */
 		}
 
-		li {
+		.menu-items {
 			display: flex;
-		}
-	}
+			// flex-direction: inherit;
 
-	.user-interactivity {
-		display: flex;
-		// flex-direction: inherit;
-
-		& > * + * {
-			margin-left: 15px;
-		}
-
-		.search {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 5px;
-			// min-width: 100px;
-			// width: 100%;
-			border-radius: 25px;
-			border: 1px solid grey;
-		}
-
-		.account {
-			display: flex;
-			// white-space: nowrap;
-		}
-
-		.shopping-cart {
-			display: flex;
-
-			.icon img {
-				width: $defaultIconSize;
-				height: $defaultIconSize;
+			//Cute little owl could be li+li
+			& > * + * {
+				margin-left: 15px;
 			}
 
-			.icon.shopping-cart {
-				//
+			li {
+				display: flex;
+				// outline: 1px solid grey;
+				a[href] {
+					padding: 15px 5px;
+				}
+
+				&.has-sub-menu {
+					// border: 2px solid red;
+					position: relative;
+
+					& > a {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+
+						&::after {
+							content: '';
+							display: inline-block;
+							width: 5px;
+							height: 5px;
+							border: 0px solid black;
+							border-width: 2px 2px 0px 0px;
+							transform: rotate(135deg);
+							transform-origin: center;
+							transition: 0.5s transform;
+							margin-top: -4px;
+							margin-left: 5px;
+						}
+					}
+				}
+
+				&:hover {
+					color: $mainLightColor;
+					cursor: pointer;
+
+					a::after {
+						border-color: $mainLightColor;
+						transform: rotate(-45deg);
+						margin-top: 1px;
+					}
+
+					ul.sub-menu-items {
+						display: block !important;
+					}
+				}
+
+				ul.sub-menu-items {
+					// outline: 3px solid red;
+					position: absolute;
+					top: 100%;
+					background-color: white;
+					color: $mainDarkColor;
+					box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.15);
+					// border: 1px solid grey;
+					width: 385px;
+					max-width: 25vw;
+					// min-width: 30vw;
+					padding: 15px 30px;
+
+					//owl boi
+					& > *:first-child {
+						// border: 1px solid grey;
+					}
+
+					& > * + * {
+						// padding: ;
+						margin-top: 15px;
+						// border: 1px solid grey;
+					}
+
+					& > li {
+						&:hover {
+							text-decoration: underline;
+							color: $mainDarkColor;
+							background-color: lighten(lightgrey, 20%);
+						}
+					}
+				}
+			}
+		}
+
+		.logo-wrapper {
+			//enforce some space
+			margin-left: 15px;
+			margin-right: 15px;
+			display: flex;
+		}
+
+		.user-interactivity {
+			display: flex;
+			// flex-direction: inherit;
+
+			& > * + * {
+				margin-left: 15px;
 			}
 
-			.shopping-cart-amount {
-				position: absolute;
-				top: 0;
-				right: 0;
-				margin-top: 5px;
-				margin-right: 5px;
+			.search {
+				position: relative;
+
+				input {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 10px 15px;
+					// min-width: 100px;
+					// width: 100%;
+					border-radius: 25px;
+					border: 1px solid grey;
+					padding-left: calc(20px + 20px);
+				}
+
+				& > img {
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					margin-left: 15px;
+
+					// outline: 1px solid red;
+				}
+			}
+
+			.account {
+				display: flex;
+				// white-space: nowrap;
+				align-items: center;
+				justify-content: center;
+
+				.icon.user-image {
+					margin-right: 5px;
+
+					//image slightly off, might be lineheight
+					margin-top: 2px;
+				}
+			}
+
+			.shopping-cart {
+				display: flex;
+				position: relative;
+
+				.icon img {
+					width: $defaultIconSize;
+					height: $defaultIconSize;
+				}
+
+				.icon.shopping-cart {
+					//
+				}
+
+				.shopping-cart-amount {
+					position: absolute;
+					top: 0;
+					right: 0;
+					margin-top: -10px;
+					margin-right: -10px;
+					z-index: 2;
+					color: $altLightColor;
+					background-color: $warningRed;
+					padding: 2px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 2px;
+					font-size: 10px;
+
+					// //hardcoded values from design
+					// width: 19px;
+					// height: 17px;
+
+					width: 15px;
+					height: 10px;
+				}
 			}
 		}
 	}
