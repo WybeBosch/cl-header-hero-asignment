@@ -1,15 +1,16 @@
 //todo
 
-- Header
-	- menu items
-		- submenu + items (hoverstate)
-			- toggle svg open / closed icon
-		- highlighted
-	- logo
-	- search bar
-	- my account + fake winkelmandje
+#- Header
+#	- menu items
+#		- submenu + items (hoverstate)
+#			- toggle svg open / closed icon
+#		- highlighted
+#	- logo
+#	- search bar
+#	- my account + fake winkelmandje
+#	- sticky background toggle
 - Hero
-	- CTA
-	- image (dynamic height of fullscreen or no?)
-	- Text
+#	- CTA
+#	- image (dynamic height of fullscreen or no?)
+#	- Text
 	- low prio: paralax
