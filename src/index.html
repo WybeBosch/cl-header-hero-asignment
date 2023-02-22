@@ -5,10 +5,9 @@
 		<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 	</head>
 	<body>
-		<div>
-			<h1>my Title</h1>
-			<img src="./static/images/hero-image.jpg" alt="" />
-			@@include('./heroTemplate.html')
+		<div id="app" class="">
+			<!-- <img src="./static/images/hero-image.jpg" alt="" /> -->
+			@@include('./components/header/index.html') @@include('./components/hero/index.html')
 		</div>
 	</body>
 </html>

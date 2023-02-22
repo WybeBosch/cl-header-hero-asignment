@@ -3,6 +3,7 @@
 - Header
 	- menu items
 		- submenu + items (hoverstate)
+			- toggle svg open / closed icon
 		- highlighted
 	- logo
 	- search bar
