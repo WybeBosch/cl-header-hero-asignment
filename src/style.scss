@@ -2,12 +2,16 @@
 @import './vars.scss';
 @import './components/header/index.scss';
 @import './components/hero/index.scss';
+@import './components/block-content-with-image/index.scss';
 
 body {
-	border: 1px solid red;
+	// border: 1px solid red;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-bottom: 900px;
 
 	h1 {
-		color: blue;
+		color: black;
 	}
 }
 
@@ -15,7 +19,7 @@ body {
 	max-width: $row_max;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid grey;
+	// border: 1px solid grey;
 	padding: 0px 15px;
 }
 

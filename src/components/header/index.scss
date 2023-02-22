@@ -2,15 +2,25 @@
 $defaultIconSize: 25px;
 
 header {
+	background-color: transparent;
+	position: fixed;
+	z-index: 2;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	background-color: white;
+
 	.container.header-content {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		border: 1px solid pink;
+		// border: 1px solid pink;
 		min-height: $headerHeight;
 		z-index: 2;
 		position: relative;
+		background-color: transparent;
 		// padding: 0px 15px;
 	}
 
